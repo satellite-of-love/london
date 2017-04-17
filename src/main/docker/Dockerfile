@@ -7,6 +7,6 @@ COPY BOOT-INF/classes /opt/build/BOOT-INF/classes
 
 WORKDIR /opt/build/
 
-EXPOSE 8080
+EXPOSE 8091
 
 CMD ["java", "-Xmx200m", "org.springframework.boot.loader.JarLauncher"]

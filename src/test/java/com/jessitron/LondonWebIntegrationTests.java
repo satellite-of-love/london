@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 @SpringBootTest(classes = LondonApplication.class, webEnvironment = WebEnvironment.DEFINED_PORT)
 public class LondonWebIntegrationTests {
 
-    private static final int PORT = 8080;
+    private static final int PORT = 8091;
 
     // Parameterize tests like this
     private static final String BASE_PATH = "http://localhost:" + PORT;
