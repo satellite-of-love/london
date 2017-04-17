@@ -8,7 +8,7 @@ import java.util.List;
 public class SurveyResultResponseController {
 
     @CrossOrigin()
-    @RequestMapping(path = "/surveyResultResponse")
+    @RequestMapping(path = "/vote")
     public SurveyResultResponse surveyResultResponse(
             @RequestBody() SingleResponse response) {
        // TODO: count things
