@@ -7,7 +7,7 @@ import java.util.List;
 @RestController
 public class SurveyResultResponseController {
 
-    @CrossOrigin()
+    @CrossOrigin(origins = "http://localhost:8080")
     @RequestMapping(path = "/vote", method = RequestMethod.POST)
     public SurveyResultResponse vote(
             @RequestBody() SingleResponse response) {
