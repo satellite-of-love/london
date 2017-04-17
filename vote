@@ -1,0 +1,2 @@
+curl -v  -X POST  http://localhost:8091/vote -d @sampleInput.json --header "Content-Type: application/json"
+echo

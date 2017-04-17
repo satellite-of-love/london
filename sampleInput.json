@@ -1,0 +1,14 @@
+{
+   "surveyName": "Sample Vote Input",
+   "options": [
+      { "imageLocation": "kitty1.png",
+        "text": "One kitty",
+        "place":1
+      },
+      { "imageLocation": "kitty2.png",
+        "text": "Two kitty",
+        "place":2
+      }
+    ],
+   "choice": 1
+}
