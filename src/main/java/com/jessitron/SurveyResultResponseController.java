@@ -1,16 +1,21 @@
 package com.jessitron;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class SurveyResultResponseController {
 
     @CrossOrigin()
     @RequestMapping(path = "/surveyResultResponse")
-    public SurveyResultResponse surveyResultResponse(@RequestParam(value = "results") List<AggregateResult> results) {
-        return new SurveyResultResponse(results);
+    public SurveyResultResponse surveyResultResponse(
+            @RequestBody() SingleResponse response) {
+       // TODO: count things
+        SurveyOption chosenOne = response.getOptions().stream().
+                filter(a -> a.getPlace() == response.getChoice()).
+                findFirst().get(); // todo: validation
+        return new SurveyResultResponse(response.getSurveyName(), chosenOne);
     }
 
 }

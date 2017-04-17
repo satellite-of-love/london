@@ -1,21 +1,32 @@
 package com.jessitron;
 
+import java.util.List;
+
 public class SurveyResultResponse {
-    
-    private List<AggregateResult> results;
 
-    public SurveyResultResponse(List<AggregateResult> results) {
-        this.results = results;
+    private String surveyName;
+    private SurveyOption option;
+
+    public SurveyResultResponse() {}
+
+    public String getSurveyName() {
+        return surveyName;
     }
 
-    public List<AggregateResult> getResults () {
-        return results;
+    public void setSurveyName(String surveyName) {
+        this.surveyName = surveyName;
     }
 
-    public void setResults (List<AggregateResult> results) {
-        this.results = results;
+    public SurveyOption getOption() {
+        return option;
     }
 
-    // don't forget the default constructor. Jackson likes it
-    public SurveyResultResponse () {}
+    public void setOption(SurveyOption option) {
+        this.option = option;
+    }
+
+    public SurveyResultResponse(String surveyName, SurveyOption option) {
+        this.surveyName = surveyName;
+        this.option = option;
+    }
 }
