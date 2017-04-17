@@ -16,12 +16,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = LondonApplication.class, webEnvironment = WebEnvironment.DEFINED_PORT)
+@SpringBootTest(classes = LondonApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
 public class SurveyResultResponseWebIntegrationTests {
 
     @Autowired
     private TestRestTemplate restTemplate;
-
     
     @Test
     public void surveyResultResponseTest() {
@@ -34,8 +33,8 @@ public class SurveyResultResponseWebIntegrationTests {
 
         SingleResponse input = new SingleResponse("hello", threeOptions, choice);
 
-        SurveyResultResponse result = restTemplate.postForObject("/surveyResultResponse", input, SurveyResultResponse.class);
-        assertEquals("hello", result.getSurveyName());
+        SurveyResultResponse result = restTemplate.postForObject("/vote", input, SurveyResultResponse.class);
+        assertEquals("Result: " + result, "hello", result.getSurveyName());
         assertEquals(choice, result.getOption().getPlace());
     }
 

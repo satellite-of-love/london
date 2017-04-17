@@ -29,4 +29,12 @@ public class SurveyResultResponse {
         this.surveyName = surveyName;
         this.option = option;
     }
+
+    @Override
+    public String toString() {
+        return "SurveyResultResponse{" +
+                "surveyName='" + surveyName + '\'' +
+                ", option=" + option +
+                '}';
+    }
 }

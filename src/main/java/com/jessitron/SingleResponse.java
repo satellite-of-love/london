@@ -40,4 +40,12 @@ public class SingleResponse {
         this.choice = choice;
     }
 
+    @Override
+    public String toString() {
+        return "SingleResponse{" +
+                "surveyName='" + surveyName + '\'' +
+                ", options=" + options +
+                ", choice=" + choice +
+                '}';
+    }
 }
