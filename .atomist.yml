@@ -89,3 +89,16 @@ editor:
     - "__description": "run an editor to add a REST endpoint to this project"
     - "__kind": "command-handler"
 
+---
+kind: "operation"
+client: "atomist-bot"
+editor:
+  name: "RestrictCORS"
+  group: "satellite-of-love"
+  artifact: "rest-service-generator"
+  version: "0.11.9"
+  origin:
+    repo: "git@github.com:satellite-of-love/workflow-rugs"
+    branch: "master"
+    sha: "5d3e90e"
+
