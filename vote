@@ -1,2 +1,6 @@
-curl -v  -X POST  http://localhost:8091/vote -d @sampleInput.json --header "Content-Type: application/json"
+
+#host="http://localhost:8091"
+host="https://survey.atomist.com/london"
+
+curl -v  -X POST $host/vote -d @sampleInput.json --header "Content-Type: application/json"
 echo
