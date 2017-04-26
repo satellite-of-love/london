@@ -1,4 +1,4 @@
-package com.jessitron;
+package com.jessitron.survey;
 
 public class SurveyOption {
 
@@ -53,5 +53,24 @@ public class SurveyOption {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        SurveyOption that = (SurveyOption) o;
+
+        if (place != that.place) return false;
+        if (imageLocation != null ? !imageLocation.equals(that.imageLocation) : that.imageLocation != null)
+            return false;
+        return text != null ? text.equals(that.text) : that.text == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = imageLocation != null ? imageLocation.hashCode() : 0;
+        result = 31 * result + (text != null ? text.hashCode() : 0);
+        result = 31 * result + place;
+        return result;
+    }
 }

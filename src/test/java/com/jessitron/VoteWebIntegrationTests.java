@@ -1,5 +1,6 @@
 package com.jessitron;
 
+import com.jessitron.survey.SurveyOption;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,21 +18,17 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = LondonApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
-public class SurveyResultResponseWebIntegrationTests {
+public class VoteWebIntegrationTests {
 
     @Autowired
     private TestRestTemplate restTemplate;
     
     @Test
     public void surveyResultResponseTest() {
-        List<SurveyOption> threeOptions = new ArrayList<>();
-        threeOptions.add(someOption(1));
-        threeOptions.add(someOption(3));
-        threeOptions.add(someOption(2));
 
         int choice = 1;
 
-        SingleResponse input = new SingleResponse("hello", threeOptions, choice);
+        Vote input = new Vote("hello", threeOptions(), choice);
 
         SurveyResultResponse result = restTemplate.postForObject("/vote", input, SurveyResultResponse.class);
         assertEquals("Result: " + result, "hello", result.getSurveyName());
@@ -39,7 +36,16 @@ public class SurveyResultResponseWebIntegrationTests {
     }
 
 
-    private SurveyOption someOption(int place) {
+    public static List<SurveyOption> threeOptions() {
+        List<SurveyOption> threeOptions = new ArrayList<>();
+        threeOptions.add(someOption(1));
+        threeOptions.add(someOption(3));
+        threeOptions.add(someOption(2));
+
+        return threeOptions;
+    }
+
+    private static SurveyOption someOption(int place) {
        return new SurveyOption("https://blahblah" + place + ".png", "Choose number " + place).withPlace(place);
     }
     

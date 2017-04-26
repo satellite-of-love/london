@@ -1,16 +1,22 @@
 package com.jessitron;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.jessitron.survey.AggregatedSurveyResult;
+import com.jessitron.survey.Survey;
+import com.jessitron.survey.SurveyOption;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Collections;
+import java.util.List;
 
 @RestController
 public class AggregatedSurveyResultController {
 
     @CrossOrigin()
-    @RequestMapping(path = "/aggregatedSurveyResult")
-    public AggregatedSurveyResult oneEndpoint(@RequestParam(value = "surveyName") String surveyName) {
-        return new AggregatedSurveyResult(surveyName);
+    @RequestMapping(path = "/aggregatedResults", method = RequestMethod.POST)
+    public AggregatedSurveyResult aggregatedSurveyResult
+            (@RequestBody() Survey survey) {
+
+        return GlobalCacheOfAggregatedResults.instance.
+                getAggregateSurveyResult(survey);
     }
 }

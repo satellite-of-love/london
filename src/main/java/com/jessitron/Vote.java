@@ -1,10 +1,12 @@
 package com.jessitron;
 
+import com.jessitron.survey.SurveyOption;
+
 import java.util.List;
 
-public class SingleResponse {
+public class Vote {
 
-    public SingleResponse() {}
+    public Vote() {}
 
     private String surveyName;
     private List<SurveyOption> options;
@@ -34,7 +36,7 @@ public class SingleResponse {
         this.surveyName = surveyName;
     }
 
-    public SingleResponse(String surveyName, List<SurveyOption> options, int choice) {
+    public Vote(String surveyName, List<SurveyOption> options, int choice) {
         this.surveyName = surveyName;
         this.options = options;
         this.choice = choice;
@@ -42,7 +44,7 @@ public class SingleResponse {
 
     @Override
     public String toString() {
-        return "SingleResponse{" +
+        return "Vote{" +
                 "surveyName='" + surveyName + '\'' +
                 ", options=" + options +
                 ", choice=" + choice +

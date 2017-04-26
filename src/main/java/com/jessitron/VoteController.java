@@ -1,17 +1,17 @@
 package com.jessitron;
 
+import com.jessitron.survey.SurveyOption;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
-public class SurveyResultResponseController {
+public class VoteController {
 
     @CrossOrigin()
     @RequestMapping(path = "/vote", method = RequestMethod.POST)
     public SurveyResultResponse vote(
-            @RequestBody() SingleResponse response) {
-       // TODO: count things
+            @RequestBody() Vote response) {
+        GlobalCacheOfAggregatedResults.instance.countVote(response);
         SurveyOption chosenOne = response.getOptions().stream().
                 filter(a -> a.getPlace() == response.getChoice()).
                 findFirst().get(); // todo: validation

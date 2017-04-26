@@ -1,5 +1,7 @@
 package com.jessitron;
 
+import com.jessitron.survey.SurveyOption;
+
 public class AggregateResult {
 
     public AggregateResult() {}

@@ -1,6 +1,6 @@
 package com.jessitron;
 
-import java.util.List;
+import com.jessitron.survey.SurveyOption;
 
 public class SurveyResultResponse {
 
