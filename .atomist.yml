@@ -106,3 +106,16 @@ editor:
     - "fieldName": "surveyName"
     - "fieldType": "String"
 
+---
+kind: "operation"
+client: "atomist-bot"
+editor:
+  name: "RestrictCORS"
+  group: "satellite-of-love"
+  artifact: "rest-service-generator"
+  version: "0.12.8"
+  origin:
+    repo: "git@github.com:satellite-of-love/workflow-rugs"
+    branch: "master"
+    sha: "b0910b4"
+
