@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 public class AggregatedSurveyResultController {
 
-    @CrossOrigin()
+    @CrossOrigin(origins = "http://localhost:8000")
     @RequestMapping(path = "/aggregatedResults", method = RequestMethod.POST)
     public AggregatedSurveyResult aggregatedSurveyResult
             (@RequestBody() Survey survey) {

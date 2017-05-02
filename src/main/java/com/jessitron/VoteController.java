@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class VoteController {
 
-    @CrossOrigin()
+    @CrossOrigin(origins = "http://localhost:8000")
     @RequestMapping(path = "/vote", method = RequestMethod.POST)
     public SurveyResultResponse vote(
             @RequestBody() Vote response) {
