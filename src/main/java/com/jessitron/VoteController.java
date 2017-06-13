@@ -10,7 +10,7 @@ public class VoteController {
     //TODO: offer an endpoint that takes only the title
     // and fetches the options from survey-source
 
-    @CrossOrigin()
+    @CrossOrigin(origins = "http://localhost:8000")
     @RequestMapping(path = "/vote", method = RequestMethod.POST)
     public SurveyResultResponse vote(
             @RequestBody() Vote response) {
