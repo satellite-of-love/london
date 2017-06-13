@@ -106,3 +106,17 @@ editor:
     - "fieldName": "surveyName"
     - "fieldType": "String"
 
+---
+kind: "operation"
+client: "com.atomist:rug"
+version: "1.0.0-20170609011313"
+editor:
+  name: "DependencyVersionChangeEditor"
+  group: "satellite-of-love"
+  artifact: "spring-team-handlers"
+  version: "0.3.13"
+  parameters:
+    - "group": "com.jessitron"
+    - "artifact": "survey-source"
+    - "desiredVersion": "0.3.2"
+
