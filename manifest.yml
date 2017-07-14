@@ -1,0 +1,5 @@
+---
+applications:
+- name: london
+  memory: 512M
+  path: target/runme.jar
